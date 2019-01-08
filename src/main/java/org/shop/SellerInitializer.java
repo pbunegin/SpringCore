@@ -7,16 +7,20 @@ import java.util.Map;
 
 import org.shop.api.SellerService;
 import org.shop.data.Seller;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.stereotype.Component;
 
 /**
  * The Seller Initializer util class.
  */
+//@Component
 public class SellerInitializer {
 
     /** The seller service. */
     private SellerService sellerService;
     
     /** The seller names. */
+    @Value("#{${sellerNames}}")
     private Map<Long, String> sellerNames = Collections.emptyMap();
 
     /**

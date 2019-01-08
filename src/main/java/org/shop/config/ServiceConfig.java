@@ -18,15 +18,15 @@ public class ServiceConfig {
     public OrderService getOrderServiceImpl(){
         return new OrderServiceImpl();
     }
-    @Bean
+    @Bean(name = "prodService")
     public ProductService getProductServiceImpl(ProductRepository repository){
         return new ProductServiceImpl(repository);
     }
-    @Bean
+    @Bean(name = "propService")
     public ProposalService getProposalServiceImpl(ProposalRepository repository){
         return new ProposalServiceImpl(repository);
     }
-    @Bean
+    @Bean(name = "selService")
     public SellerService getSellerServiceImpl(){
         return new SellerServiceImpl();
     }
