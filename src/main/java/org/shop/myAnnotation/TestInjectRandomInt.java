@@ -1,10 +1,13 @@
 package org.shop.myAnnotation;
 
 public class TestInjectRandomInt {
-    @InjectRandomInt(max = 2, min = 10)
+    @InjectRandomInt(max = 10, min = 2)
     private int testRandInt;
 
-    public int initAndGetTestRandomInt(){
-        return testRandInt;
+    @Override
+    public String toString() {
+        return "TestInjectRandomInt{" +
+                "testRandInt=" + testRandInt +
+                '}';
     }
 }

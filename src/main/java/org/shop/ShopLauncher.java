@@ -2,6 +2,7 @@ package org.shop;
 
 
 import org.shop.config.MainConfig;
+import org.shop.myAnnotation.TestInjectRandomInt;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
@@ -21,5 +22,8 @@ public class ShopLauncher {
         ProductInitializer productInitializer = context.getBean(ProductInitializer.class);
         SellerInitializer sellerInitializer = context.getBean(SellerInitializer.class);
         UserInitializer userInitializer = context.getBean(UserInitializer.class);
+
+        TestInjectRandomInt testInjectRandomInt = context.getBean(TestInjectRandomInt.class);
+        System.out.println(testInjectRandomInt);
     }
 }

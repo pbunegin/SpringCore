@@ -10,7 +10,6 @@ import org.springframework.context.support.PropertySourcesPlaceholderConfigurer;
 @Configuration
 @Import({DataInitConfig.class,FactoryConfig.class,RepositoryConfig.class,ServiceConfig.class})
 @PropertySource("classpath:orderRepository.properties")
-//@ComponentScan
 @EnableAspectJAutoProxy
 public class MainConfig {
     @Bean
@@ -25,7 +24,7 @@ public class MainConfig {
     public BeanPostProcessor getInjectRandomIntAnnotationBeanPostProcessor(){
         return new InjectRandomIntAnnotationBeanPostProcessor();
     }
-    @Bean(initMethod = "initAndGetTestRandomInt")
+    @Bean
     public TestInjectRandomInt getTestInjectRandomInt(){
         return new TestInjectRandomInt();
     }

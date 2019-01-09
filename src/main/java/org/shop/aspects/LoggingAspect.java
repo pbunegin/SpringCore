@@ -12,17 +12,6 @@ public class LoggingAspect {
 
     @After("execution(* org.shop.*.init*(..)) && !within(is(FinalType))")
     public void logInit(JoinPoint jp) {
-        if (jp.getTarget() != null){
-            LOGGER.info(jp.getTarget().toString());
-        }
         LOGGER.info(jp.toLongString());
     }
-//    @Before("execution(* org.shop.*.create*(..)) && execution(* org.shop.*.register*(..)) && !within(is(FinalType))")
-//    public void logCreate(JoinPoint jp) {
-//        LOGGER.info(jp.toLongString());
-//    }
-//    @Before("execution(* org.shop.*.init*(..)) && !within(is(FinalType))")
-//    public void log(JoinPoint jp) {
-//        LOGGER.info(jp.toLongString());
-//    }
 }
