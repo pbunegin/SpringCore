@@ -14,7 +14,7 @@ import org.springframework.stereotype.Component;
 /**
  * The Proposal Initializer util class.
  */
-@Component
+//@Component
 public class ProposalInitializer {
     
     /** The product service. */

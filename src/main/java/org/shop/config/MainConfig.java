@@ -10,7 +10,7 @@ import org.springframework.context.support.PropertySourcesPlaceholderConfigurer;
 @Configuration
 @Import({DataInitConfig.class,FactoryConfig.class,RepositoryConfig.class,ServiceConfig.class})
 @PropertySource("classpath:orderRepository.properties")
-@ComponentScan
+//@ComponentScan
 @EnableAspectJAutoProxy
 public class MainConfig {
     @Bean
