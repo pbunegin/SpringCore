@@ -17,6 +17,9 @@ public class ShopLauncher {
      */
     public static void main(String[] args) {
         ApplicationContext context = new AnnotationConfigApplicationContext(MainConfig.class);
-
+        DataInitializer dataInitializer = context.getBean(DataInitializer.class);
+        ProductInitializer productInitializer = context.getBean(ProductInitializer.class);
+        SellerInitializer sellerInitializer = context.getBean(SellerInitializer.class);
+        UserInitializer userInitializer = context.getBean(UserInitializer.class);
     }
 }

@@ -3,11 +3,17 @@ package org.shop.config;
 import org.shop.*;
 import org.shop.api.ProductService;
 import org.shop.api.UserService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.Lazy;
 
 @Configuration
 public class DataInitConfig {
+    @Autowired
+    private ProductService productService;
+    @Autowired
+    private UserService userService;
 
     @Bean(initMethod="initData")
     public DataInitializer getDataInitializer(){
@@ -15,7 +21,7 @@ public class DataInitConfig {
     }
 
     @Bean
-    public ProductInitializer getProductInitializer(ProductService productService){
+    public ProductInitializer getProductInitializer(){
         return new ProductInitializer(productService);
     }
 
@@ -30,7 +36,7 @@ public class DataInitConfig {
     }
 
     @Bean
-    public UserInitializer getUserInitializer(UserService userService){
+    public UserInitializer getUserInitializer(){
         return new UserInitializer(userService);
     }
 }
