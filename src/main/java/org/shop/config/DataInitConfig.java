@@ -10,10 +10,6 @@ import org.springframework.context.annotation.Lazy;
 
 @Configuration
 public class DataInitConfig {
-    @Autowired
-    private ProductService productService;
-    @Autowired
-    private UserService userService;
 
     @Bean(initMethod="initData")
     public DataInitializer getDataInitializer(){
@@ -21,7 +17,7 @@ public class DataInitConfig {
     }
 
     @Bean
-    public ProductInitializer getProductInitializer(){
+    public ProductInitializer getProductInitializer(ProductService productService){
         return new ProductInitializer(productService);
     }
 
@@ -36,7 +32,7 @@ public class DataInitConfig {
     }
 
     @Bean
-    public UserInitializer getUserInitializer(){
+    public UserInitializer getUserInitializer(UserService userService){
         return new UserInitializer(userService);
     }
 }
